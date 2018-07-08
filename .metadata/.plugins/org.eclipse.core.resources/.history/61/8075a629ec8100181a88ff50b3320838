@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app='myApp'>
+<head>
+<meta charset="ISO-8859-1">
+<title>Bootstrap Example</title>
+   	<meta charset="utf-8">
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&subset=latin-ext" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
+
+<!--  <link rel="stylesheet" href="resources/assets/css/Pretty-Footer.css"/>
+  <link rel="stylesheet" href="resources/assets/css/Pretty-Registration-Form.css"/>
+   
+   <link rel="stylesheet" href="resources/assets/css/jobform.css"/>
+   <link rel="stylesheet" href="resources/assets/css/notification.css"/>
+   <link rel="stylesheet" href="resources/assets/css/likes.css"/>
+   <link rel="stylesheet" href="resources/assets/css/style.css"/>
+     <link rel="stylesheet" href="resources/assets/css/login.css"/>
+ -->   
+
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="resources/angular.min.js"></script>
+     <script src="resources/angular-route.js"></script>
+       <script src="resources/angular-cookies.js"></script>
+   
+   
+ 
+     <script src="resources/app.js"></script>
+     
+      <script type="text/javascript" src="home/home.js"></script>
+ 
+ <script type="text/javascript" src="about/about.js"></script>
+ 
+ <script type="text/javascript" src="contact/contact.js"></script>
+ <script type="text/javascript" src="service/registerService.js"></script>
+ <script type="text/javascript" src="controller/registerController.js"></script>
+  <script type="text/javascript" src="service/blogService.js"></script>
+ <script type="text/javascript" src="service/loginService.js"></script>
+ <script type="text/javascript" src="controller/loginController.js"></script>
+  <script type="text/javascript" src="service/blogService.js"></script>
+ <script type="text/javascript" src="controller/blogController.js"></script>
+      
+  	
+
+</head>
+<body ng-app="myApp">
+
+<header>
+
+	<nav class="navbar navbar-inverse">
+		    <div class="container-fluid">
+		    <button type="button" class="navbar-toggle collapsed" 
+   data-toggle="collapse" data-target="#collapse-example" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+           	<div class="navbar-header">
+    	        <a class="navbar-brand" href="/">KENNEDYHIGH</a>
+    	    </div>
+    	    
+    	    <div class="collapse navbar-collapse" id="collapse-example">
+    	<ul class="nav navbar-nav">
+    		  
+    		  <li class="active"><a href="#Home">Home</a></li>
+    		
+
+<div class="collapse navbar-collapse" id="collapse-example">
+<ul class="nav navbar-nav">
+
+<li><a href="#/register"><span class="fa fa-lock" ng-show="loggedInUser.firstName==undefined">Register</span></a></li>
+<li><a href="#/login"><span class="fa fa-key" ng-show="loggedInUser.firstName==undefined">Login</span></a></li>
+<li><a href="#" ng-show="loggedInUser.firstName">Hi  {{loggedInUser.firstName}}&nbsp;{{loggedInUser.lastName}}</a></li>
+<li><a href="#/"><span class="glyphicon glyphicon-log-out"  ng-click="logout()"ng-show="loggedInUser.firstName!=undefined">Logout</span></a></li>
+
+<li><a href="#/addjob" ng-show="loggedInUser.role=='ADMIN'">Save Job Details</a><li>
+ <li><a href="#/alljobs" ng-show="loggedInUser.firstName">GetAllJobs</a></li>
+<li><a href="#/edituserprofile"><span class="glyphicon glyphicon-pencil" ng-show="loggedInUser.firstName!=undefined">EditProfile</span></a></li>
+<li class="dropdown">
+    	     			  <li class="dropdown"><a href="" class="dropdown-toggle"
+data-toggle="dropdown" ng-show="loggedInUser.firstName!=undefined">Blog<b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="#/addblog">Add Blog</a></li>
+<li><a href="#/blogsnotapproved" ng-show="loggedInUser.role=='ROLE_ADMIN'">Blogs waiting for approval</a></li>
+<li><a href="#/blogsapproved">Blogs</a></li>
+</ul></li>
+<li><a href="#/uploadprofilepic" ng-show="loggedInUser.firstName!=undefined">
+<img src="http://localhost:8181/Backend2/getimage/{{loggedInUser.email}}" alt="Upload Picture" class="img-circle" width="50px" height="50px" ></a></li>
+<li class="dropdown"><a href=""class="dropdown-toggle"
+data-toggle="dropdown" ng-show="loggedInUser.firstName!=undefined">Friend<b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="#/suggestedusers">Suggested User</a><li>
+<li><a href="#/pendingrequests">Pending Requests</a><li>
+<li><a href="#/friends">Friends</a></li>
+</ul></li>
+<li><a href="#/chat" ng-show="loggedInUser.firstName">Chat </a></li>
+ <li>
+ 
+ <div class="navbar buttons" ng-show="loggedInUser.firstName!=undefined">
+<input type="text" placeholder="search user" class="navbar search" ng-model="user">
+<a href="#/searchuser" class="btn navbar-btn btn-primary pull-right" type="button" ng-click="searchUser(user)">
+<i class="fa fa-search"></i></a>
+</div>
+ </li>>
+<li class="dropdown">
+<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="loggedInUser.firstName">
+<span class="glyphicon glyphicon-globe">
+<span class="rw-number-notification" ng-if="notificationCount>0">{{notificationCount}}</span></span></a>
+<ul class="dropdown-menu">
+<span class="dropdown-content">
+<li ng-repeat="n in notifications">
+<a href="#/getnotification/{{n.id}}">Blog titled <b>{{n.blogTitle}}</b>approval status is updated</a>
+
+<hr>
+</li>
+</span>
+</ul>
+</li>
+</ul>
+</div> 
+</div> 
+
+</div>
+</nav>
+
+</header>
+
+<div ng-view></div>
+<br><br><br><br><br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- footer -->
+	<div class="footer" id="footer">
+		<div class="container">
+			<div class="col-md-4 agileinfo_footer_grid">
+				<h4>About Us</h4>
+				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
+					fugiat nulla pariatur. <span>Excepteur sint occaecat cupidatat non proident 
+					sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
+			</div>
+		
+			<div class="col-md-4 agileinfo_footer_grid">
+				<h4>Address</h4>
+				<ul>
+					<li><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 738 Diamond Road, New York City</li>
+					<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:info@example.com">info@example.com</a></li>
+					<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> (0123) 0111 111 222</li>
+				</ul>
+			</div>
+			
+			
+		</div>
+	</div>
+<!-- //footer -->
+</body>
+
+
+
+
+
+</html>

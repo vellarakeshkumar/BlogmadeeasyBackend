@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AngularJS Routing example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    
+  </head>
+
+  <body data-ng-app="myApp">
+
+    <div class="container">
+  <div class="row">
+  <div class="col-md-3">
+   <ul class="nav">
+    <li><a href="#home"> Home </a></li>
+    <li><a href="#about"> About </a></li>
+    <li><a href="#contact"> Contact </a></li>
+    <li><a href="#register" data-ng-show={{currentuser.firstName}}"> register </a></li>
+    <li><a href="#login" data-ng-show="loggedInUser.firstName=undefined"> Login </a></li>
+    <li><a href="#" ng-show="loggedInUser.firstName!=undefined">Welcome {{loggedInUser.firstName}}&nbsp;{{loggedInUser.lastName}}</a></li>
+    <li><a href="" data-ng-click="logout()" data-ng-show!="{{currentuser.firstName}}">logout</a></li>
+   </ul>
+  </div>
+  <div class="col-md-9">
+ <div data-ng-view></div>
+  </div>
+  </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></scri -->
+  
+    <script src="resources/angular.min.js"></script>
+     <script src="resources/angular-route.js"></script>
+       <script src="resources/angular-cookies.js"></script>
+   
+   
+ 
+     <script src="resources/app.js"></script>
+     
+      <script type="text/javascript" src="home/home.js"></script>
+ 
+ <script type="text/javascript" src="about/about.js"></script>
+ 
+ <script type="text/javascript" src="contact/contact.js"></script>
+ <script type="text/javascript" src="service/registerService.js"></script>
+ <script type="text/javascript" src="controller/registerController.js"></script>
+ 
+ <script type="text/javascript" src="service/loginService.js"></script>
+ <script type="text/javascript" src="controller/loginController.js"></script>
+ 
+  </body>
+</html>

@@ -1,0 +1,22 @@
+app.factory('BlogService',function($http)
+{
+	
+	var BASE_URL="http://localhost:8180/BackEndCollaboration";
+
+
+var blogService={}
+
+
+blogService.addBlog=function(blog)
+{
+	
+return $http.post(BASE_URL+'/createPost',blog);
+}
+
+return blogService;
+
+
+
+});
+		
+		

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FrontEndCollaboration/WebContent/view/viewPendingost.html&apos; to &apos;viewPendingpost.html&apos;" description="Rename resource &apos;viewPendingost.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/view/viewPendingost.html" name="viewPendingpost.html" stamp="1530453839633" updateReferences="true"/>
+</session>

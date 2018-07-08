@@ -1,0 +1,32 @@
+<html>
+<body data-ng-controller='BlogDetailController'>
+<div class="container" align="justify">
+  <div class="row vertical-offset-100">
+      <div class="col-md-6 col-md-offset-14">
+       <div class="panel panel-default">
+     <div class="panel-heading">
+         <h3 class="panel-title" align="center">Approval form</h3>
+      </div><br>
+<center>
+    <span ng-show="blogsWaitingForApproval.length==0"><h5>No Blogs waiting for approval</h5></span>
+<h5>{{blog.blogTitle}}</h5><br>
+<b>posted On:</b> {{blog.postedOn | date:'medium'}}<br>
+<b>Posted By:</b><img src="http://localhost:8181/Backend2/getimage/{{blog.postedBy.email}}"  width="30px" height="30px" >
+{{blog.postedBy.firstName}}&nbsp;{{blog.postedBy.lastName}}
+
+<div>
+<p ng-bind-html="content"></p>
+<a href="" ng-click="approve(blog)" class="button-2">Approve</a> &nbsp; 
+<a href="" ng-click="showRejectionTxt()" class="button-2">Reject</a>
+<div ng-show="rejectionTxt">
+<b>Reason:</b><br>
+<p><input ng-model="rejectionReason" placeholder="Enter vaild reason"/></p>
+<a href="" ng-click="reject(blog)" class="button-2">Submit</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

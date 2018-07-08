@@ -1,0 +1,20 @@
+app.controller('BlogController',function('BlogService',$scope,$location,$rootScope){
+    
+    $scope.post=function()
+   {
+     console.log("register....")
+     BlogService.blogPost($scope.post).then (function(response)
+        {
+            $scope.message="Blog created successfully..... Please Login...."
+             console.log("done")
+             $location.path('/home')
+        }, function(response)
+        {
+            $scope.error=response.data;
+            $location.path('/login')
+        })
+    
+    }
+    
+ 
+})

@@ -1,0 +1,10 @@
+app.controller('BlogController',function('BlogService',$scope,$location){
+	
+	$scope.post=function()
+	{
+		
+		
+	}
+	
+
+});

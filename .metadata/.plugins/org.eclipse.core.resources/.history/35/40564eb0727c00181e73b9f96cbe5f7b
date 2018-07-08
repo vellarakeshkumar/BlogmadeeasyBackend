@@ -1,0 +1,1 @@
+app.controller('BlogController',function('BlogService',$scope,$location,$rootScope)

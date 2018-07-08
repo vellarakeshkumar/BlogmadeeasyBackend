@@ -1,0 +1,16 @@
+app.controller('BlogController',function($scope,$location,$rootScope,BlogService) {
+	$scope.postblog=function(blog) {
+		  console.log("blog controller start")
+		BlogService.addBlog($scope.blog).then(
+				function(response) {
+					alert('Blogpost is added successfully and it is waiting for approval');
+					$location.path('/home')
+				},
+				function(response) {
+					$rootScope.error=response.data
+					if(response.status==401)
+						$location.path('/login')
+				})
+	}
+	
+})

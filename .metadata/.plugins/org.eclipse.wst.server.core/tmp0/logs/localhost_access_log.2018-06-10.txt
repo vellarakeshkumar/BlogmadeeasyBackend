@@ -1,0 +1,5 @@
+127.0.0.1 - - [10/Jun/2018:09:31:56 -0300] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [10/Jun/2018:09:32:13 -0300] "POST /BackEndCollaboration/login HTTP/1.1" 200 687
+0:0:0:0:0:0:0:1 - - [10/Jun/2018:09:36:48 -0300] "POST /BackEndCollaboration/login HTTP/1.1" 406 1174
+0:0:0:0:0:0:0:1 - - [10/Jun/2018:09:37:05 -0300] "POST /BackEndCollaboration/login HTTP/1.1" 406 1174
+0:0:0:0:0:0:0:1 - - [10/Jun/2018:09:38:30 -0300] "POST /BackEndCollaboration/login HTTP/1.1" 415 1086

@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body data-ng-controller='LoginController'>
+<div class="container" align="justify">
+		<div class="row vertical-offset-100">
+		    <div class="col-md-8 col-md-offset-14">
+		    	<div class="panel panel-default">
+					<div class="panel-heading">
+				    	<h3 class="panel-title" align="center"><i>List Of Blogs</i></h3>
+				 	</div>
+<div class="table-responsive" data-ng-show="loggedInUser.role=='ROLE_ADMIN'">
+List of Blog Posts waiting for approval
+<table class="table">
+<tr><th>Recent Posts</th></tr>
+<!-- {{blogsWaitingForApproval|json}} -->
+<tr data-ng-repeat="blogPost in blogsWaitingForApproval ">
+
+<td><a href="#getBlogForApproval/{{blogPost.id}}">{{blogPost.blogTitle}}</a></td>
+<td>Created By: {{blogPost.createdBy.username}}</td>
+<td>Created on: {{blogPost.postedOn | date:'MM/dd/yyyy HH:mm'}}</td>
+</tr>
+</table>
+</div>
+
+<div class="table-responsive">
+List of Approved Blog Posts
+<table class="table">
+<tr><th>Recent Posts</th></tr>
+<tr data-ng-repeat="blogPost in blogsApproved ">
+<td><a href="#getBlogDetail/{{blogPost.id}}">{{blogPost.title}}</a></td>
+<td>Created By: {{blogPost.createdBy.username}}</td>
+<td>Created on: {{blogPost.postedOn | date:'MM/dd/yyyy HH:mm'}}</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

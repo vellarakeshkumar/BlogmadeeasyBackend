@@ -1,0 +1,9 @@
+127.0.0.1 - - [26/May/2018:12:56:05 -0300] "GET / HTTP/1.1" 404 1073
+127.0.0.1 - - [26/May/2018:12:57:10 -0300] "GET / HTTP/1.1" 404 1073
+0:0:0:0:0:0:0:1 - - [26/May/2018:12:57:12 -0300] "GET /BackEndCollaboration/WEB-INF/classes/org/collaborative/model/BlogUserDetail.java HTTP/1.1" 404 1046
+0:0:0:0:0:0:0:1 - - [26/May/2018:13:02:38 -0300] "GET /BackEndCollaboration/WEB-INF/classes/org/collaborative/controller/PostController.java HTTP/1.1" 404 1046
+0:0:0:0:0:0:0:1 - - [26/May/2018:13:03:06 -0300] "GET /BackEndCollaboration/WEB-INF/classes/org/collaborative/dao/PostDAO.java HTTP/1.1" 404 1046
+0:0:0:0:0:0:0:1 - - [26/May/2018:13:03:27 -0300] "GET /BackEndCollaboration/WEB-INF/classes/org/collaborative/dao/PostDAOImpl.java HTTP/1.1" 404 1046
+0:0:0:0:0:0:0:1 - - [26/May/2018:13:04:01 -0300] "GET /BackEndCollaboration/WEB-INF/classes/org/collaborative/service/UserServiceImpl.java HTTP/1.1" 404 1046
+0:0:0:0:0:0:0:1 - - [26/May/2018:13:17:53 -0300] "POST /BackEndCollaboration/login HTTP/1.1" 200 686
+0:0:0:0:0:0:0:1 - - [26/May/2018:13:23:30 -0300] "GET /BackEndCollaboration/WEB-INF/classes/org/collaborative/controller/PostController.java HTTP/1.1" 404 1046

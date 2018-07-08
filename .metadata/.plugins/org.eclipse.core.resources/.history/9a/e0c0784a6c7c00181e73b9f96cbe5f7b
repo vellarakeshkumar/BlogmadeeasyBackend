@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register Page</title>
+
+</head>
+<body data-ng-app='myApp' data-ng-controller="RegisterController"> 
+
+  <div class="container">
+   <div class="row main">
+    <div class="main-login main-center">
+    <h2 align="center" style="color: black;">Registration Form</h2>
+    <!-- <form class="form-horizontal" role="form" data-ng-submit="register()" action="" > -->
+         
+         
+         <div class="form-group">
+       <label for="username" class="cols-sm-3 control-label" style="color: black;">First Name</label>
+       <div class="cols-sm-9">
+        <div class="input-group">
+         <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+          <input type="text" id="firstname" placeholder="blogTitle" required data-ng-model="post.blogTitle" class="form-control" autofocus />
+                       </div>
+       </div>
+      </div>
+         <div class="form-group">
+       <label for="username" class="cols-sm-3 control-label" style="color: black;">Last Name</label>
+       <div class="cols-sm-9">
+        <div class="input-group">
+         <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+          <input type="text" id="lastname" placeholder="blogTitle" required data-ng-model="post.blogTitle" class="form-control" autofocus />
+                       </div>
+       </div>
+      </div>
+
+       <div class="form-group ">
+       <button class="btn btn-lg btn-success btn-block" data-ng-click="addBlog()">RegisterBlog</button>
+            
+      </div>
+      <p class="change_link" style="color: black;">  
+         <b>Already a member ?</b>
+         <a href="#login" class="to_register"> Go and Login</a>
+        </p>      
+    <!--  </form> -->
+    </div>
+   </div>
+  </div>
+
+</body>
+</html>

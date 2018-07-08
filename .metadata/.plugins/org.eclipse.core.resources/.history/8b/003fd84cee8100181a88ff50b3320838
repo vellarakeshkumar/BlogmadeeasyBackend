@@ -1,0 +1,74 @@
+
+<div class="blog">
+<div class="container">
+<div class="row vertical-offset-20" data-ng-controller="BlogController">
+		<div class="col-md-8 col-md-offset-2">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+		  
+		  			<h3 class="panel-title"> Blogs Pending for Approval</h3>
+		        </div>
+			<div class="panel-body">
+			<div data-ng-if="blogsWaitingForApproval.length==0">No Pending Blogs available</div>
+				<table data-ng-show="blogPendingList.length>0" class="forum-table">
+					<thead class="table-header">
+						<tr>
+							<th class="forum-icon">&nbsp;</th>
+							<th class="forum-topics">Blog Title</th>
+							<th class="forum-posts">Author </th>
+							<th class="forum-date">Posted On</th>
+							<!-- <th>Rejection Reason</th> -->
+						</tr>
+					</thead>
+					<tbody>
+						<tr data-ng-repeat="blog in blogsWaitingForApproval">
+							<td class="forum-list-icon"><i class="fa fa-file-text" aria-hidden="true" style="font-size:24px;color:#ccc"></i></td>
+							<td colspan="1"><div class="forum-name"><a href="#/viewBlogDetail/{{blog.id}}">{{blog.blogTitle}}</a></div>
+							 <div  class="forum-description">{{blog.blogContent | limitTo:30}}..</div></td>
+							<td> <div class="forum-no-posts">{{blog.postedBy.firstName}}&nbsp;{{blog.postedBy.lastName}}
+							</div></td>
+							<td class="forum-start-date">{{blog.createdDate | date : "medium"}}</td>
+							
+							<!-- <td><input type="radio" data-ng-model="blog.status" value="APPROVED"> Approve &nbsp;&nbsp;&nbsp;<input type="radio" data-ng-model="blog.status" value="REJECTED"> Reject 
+							<br></td>
+							<td><input type="text" data-ng-model="rejectionReason"></td>
+							<td><button data-ng-click="approveOrRejectBlog(blog.blogId,blog.status,rejectionReason)">Ok</button></td> -->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="panel panel-default">
+			  	<div class="panel-heading">
+		  
+		  			<h3 class="panel-title"> All Blogs</h3>
+		        </div>
+			<div class="panel-body">
+			<div data-ng-if="blogAllList.length==0">No Blogs available</div>
+				<table data-ng-show="blogAllList.length>0" class="forum-table">
+					<thead class="table-header">
+						<tr>
+							<th class="forum-icon">&nbsp;</th>
+							<th class="forum-topics">Blog Title</th>
+							<th class="forum-posts">Author </th>
+							<th  class="forum-posts">Status </th>
+							<th class="forum-date">Posted On</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr data-ng-repeat="blog in blogAllList">
+							<td class="forum-list-icon"><i class="fa fa-file-text" aria-hidden="true" style="font-size:24px;color:#ccc"></i></td>
+							<td colspan="1"><div class="forum-name"><a href="#/viewBlogDetail/{{blog.blogId}}">{{blog.blogTitle}}</a></div>
+							 <div  class="forum-description">{{blog.blogContent | limitTo:30}}..</div></td>
+							<td> <div class="forum-no-posts">{{userNames[blog.userId]}}</div></td>
+							<td> <div class="forum-no-posts">{{blog.status}}</div></td>
+							<td class="forum-start-date">{{blog.createdDate | date : "medium"}}</td>							
+						</tr>
+					</tbody>
+				</table>
+			</div>
+ 		</div>
+	</div>
+</div>
+</div>	
+</div>	
+</div>		
